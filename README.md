@@ -6,4 +6,4 @@ Year: 2020
 
 Submitted as coursework
 
-Requires comment addition
+Requires addition of comments and program sturcuture to be altered and decluttered. 
