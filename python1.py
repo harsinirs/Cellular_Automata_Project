@@ -9,28 +9,22 @@ matrix2=np.array([[1,2,3,2,2,3],[3,3,2,0,2,1],[2,3,0,3,1,0],[2,3,2,3,1,3],[0,1,2
 print(row, col)
 print(matrix2)
 print("Total population: ",row*col)
-NH1=NR1=NI1=0
-for x in range(r):
-    for y in range(c):
-        if (matrix1[x][y]==1):
-            NH1+=1
-        elif (matrix1[x][y]==0):
-            NR1+=1
-        elif (matrix1[x][y]==2):
-            NI1+=1
-print("Healthy: ",NH1,"\nInfected: ",NI1,"\n Population removed: ",NR1)
-NH2=NR2=NI2=0
-for x in range(row):
-    for y in range(col):
-        if (matrix2[x][y]==1):
-            NH2+=1
-        elif(matrix2[x][y]==3):
-            NH2+=1
-        elif (matrix2[x][y]==0):
-            NR2+=1
-    elif (matrix2[x][y]==2):
-        NI2+=1
-print("Healthy: ",NH2,"\nInfected: ",NI2,"\n Population removed: ",NR2)
+
+#calculate the number of healthy, infected, and removed individuals in population in a given neighbourhood.
+def popstats(m):
+    NH=NR=NI=0
+    (row, col)=m.shape
+    for x in range(row):
+        for y in range(col):
+            if (m[x][y]==1):
+                NH+=1
+            elif(m[x][y]==3):
+                NH+=1
+            elif (m[x][y]==0):
+                NR+=1
+            elif (m[x][y]==2):
+                NI+=1
+    print("Healthy: ",NH,"\nInfected: ",NI,"\n Population removed: ",NR)
 
 def rules1(m,a,b):
   n1=n2=n3=n0=p=q=0
